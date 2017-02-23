@@ -57,11 +57,17 @@ public class Car {
     }
     //setters with validation 
     public void setMake(String make) {
-        this.make = make;
+        if(makes.contains(make))
+            this.make = make;
+        else
+            throw new IllegalArgumentException("That is not a vaild make");
     }
 
     public void setModel(String model) {
-        this.model = model;
+        if(mods.contains(model))
+            this.model = model;
+        else
+            throw new IllegalArgumentException("Not a vaild model");
     }
 
     public void setList_of_features(String list_of_features) {

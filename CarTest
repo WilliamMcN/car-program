@@ -1,0 +1,137 @@
+package car;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+/**
+ *
+ * @author williammc
+ */
+public class CarTest {
+    
+    public CarTest() {
+    }
+    
+    @BeforeClass
+    public static void setUpClass() {
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+    }
+    
+    @Before
+    public void setUp() {
+    }
+    
+    @After
+    public void tearDown() {
+    }
+
+    /**
+     * Test of main method, of class Car.
+     */
+    @Test
+    public void testMilage() {
+        System.out.println("getMilage");
+        int expResult = 50;
+        int result = validCar.Checkyear(carMilage);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testSelling() {
+        System.out.println("getSale");
+        int expResult = 10000;
+        int result = validCar.Checkyear(carSale);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testGetModel() {
+        System.out.println("getModel");
+        String expResult = "TJ";
+        String result = validCar.setModel(carModel);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testGetMake() {
+        System.out.println("getMake");
+        String expResult = "Jeep";
+        String result = validCar.setModel(carMake);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testList() {
+        System.out.println("getList");
+        String expResult = "List";
+        String result = validCar.getList_Features(carList);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testYear() {
+        System.out.println("getYear");
+        int expResult = 2000;
+        int result = validCar.Checkyear(carYear);
+        assertEquals(expResult, result);
+    }
+    @Test
+    public void testInvalidYear() {
+        System.out.println("setYear");
+        int carYear = 1;
+        try
+        {
+            validCar.Checkyear(carYear);
+            fail("Checkyear should have thrown an exception");
+        }
+        catch (IllegalArgumentException e)
+        {
+             
+        }
+    }
+    @Test
+    public void testInvalidSetSellingPrice() {
+        System.out.println("setSellingPrice");
+        int carSale = -100;
+        try
+        {
+            validCar.setSelling_Price(carSale);
+            fail("setSelling_Price should have thrown an exception");
+        }
+        catch (IllegalArgumentException e)
+        {
+             
+        }
+    }
+    @Test
+    public void testInvalidCarModel() {
+        System.out.println("setModel");
+        String model ="Box";
+        try
+        {
+            validCar.setModel(model);
+            fail("setMilage should have thrown an exception");
+        }
+        catch (IllegalArgumentException e)
+        {
+             
+        }
+    }
+
+@Test
+    public void testInvalidCarMake() {
+        System.out.println("setMake");
+        String make ="Box";
+        try
+        {
+            validCar.setMake(make);
+            fail("setMilage should have thrown an exception");
+        }
+        catch (IllegalArgumentException e)
+        {
+             
+        }
+    }
+}
